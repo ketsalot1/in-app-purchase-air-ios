@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" applicationComplete="application1_applicationCompleteHandler(event)">
+	<s:layout>
+		<s:VerticalLayout>
+			
+		</s:VerticalLayout>
+	</s:layout>
+	<fx:Script>
+		<![CDATA[
+			import com.adobe.nativeExtensions.AppPurchase;
+			import com.adobe.nativeExtensions.AppPurchaseEvent;
+			import com.adobe.nativeExtensions.Product;
+			import com.adobe.nativeExtensions.Transaction;
+			
+			import mx.collections.ArrayCollection;
+			import mx.events.FlexEvent;
+			import mx.messaging.Producer;
+			
+			import spark.events.IndexChangeEvent;
+			[Bindable] var arrC = null;
+			protected function application1_applicationCompleteHandler(event:FlexEvent):void
+			{
+				trace("Starting test..");
+				AppPurchase.manager.addEventListener(AppPurchaseEvent.UPDATED_TRANSACTIONS,onUpdate);
+				AppPurchase.manager.addEventListener(AppPurchaseEvent.RESTORE_FAILED,function(e:AppPurchaseEvent):void{trace(e.error);});
+				AppPurchase.manager.addEventListener(AppPurchaseEvent.RESTORE_COMPLETE,function(e:AppPurchaseEvent):void{trace("Restore COMPLETE");});
+				AppPurchase.manager.addEventListener(AppPurchaseEvent.REMOVED_TRANSACTIONS,function(e:AppPurchaseEvent):void{
+					trace("Removed Transaction...");
+					for each(var t:Transaction in e.transactions){
+						trace ("Removed: " + t.transactionIdentifier);
+					}
+				});
+				trace("Restoring Transactions..");
+				AppPurchase.manager.restoreTransactions();
+				trace("getting Transactions...");
+				var ts:Array = AppPurchase.manager.transactions;
+				for each(var t:Transaction in ts){
+					trace("APP - Printing Transaction FROM GET PROPERTY..");
+					trace("Date: " + t.date);
+					trace("Error: " + t.error); 
+					trace("Product Id: " + t.productIdentifier);
+					trace("Product Quantity: " + t.productQuantity);
+					trace("Receipt: " + t.receipt);
+					trace("State: " + t.state);
+					trace("transaction Identifier: " + t.transactionIdentifier);
+				}
+				
+				trace ("APP - MUTED " + AppPurchase.manager.muted);
+			}
+			
+			protected function button1_clickHandler(event:MouseEvent):void
+			{
+				AppPurchase.manager.addEventListener(AppPurchaseEvent.PRODUCTS_RECEIVED,onProducts);
+				AppPurchase.manager.getProducts(["suite","pepsi","ball"]);
+				
+			}
+			
+			protected function onProducts(e:AppPurchaseEvent):void{
+				arrC = new ArrayCollection(e.products);
+				for each(var p:Product in e.products){
+					trace(p.description);
+					trace(p.price);
+					trace(p.priceLocale); 
+					trace(p.identifier);
+					trace(p.title); 
+				}
+				
+				for each(var s:String in e.invalidIdentifiers){
+					trace(s);
+				}
+			}
+			
+			protected function onUpdate(e:AppPurchaseEvent):void{
+				trace("APP - onUpdate");
+				for each(var t:Transaction in e.transactions){
+					trace("APP - Printing Transaction");
+					trace("Date: " + t.date);
+					trace("Error: " + t.error); 
+					trace("Product Id: " + t.productIdentifier);
+					trace("Product Quantity: " + t.productQuantity);
+					trace("Receipt: " + t.receipt);
+					trace("State: " + t.state);
+					trace("transaction Identifier: " + t.transactionIdentifier);
+					if(t.state == Transaction.TRANSACTION_STATE_PUCHASED){
+						var req:URLRequest = new URLRequest("https://sandbox.itunes.apple.com/verifyReceipt");
+						req.method = URLRequestMethod.POST;
+						req.data = "{\"receipt-data\" : \""+ t.receipt +"\"}";
+						var ldr:URLLoader = new URLLoader(req);
+						ldr.load(req);
+						ldr.addEventListener(Event.COMPLETE,function(e:Event):void{
+							trace("LOAD COMPLETE: " + ldr.data);
+							AppPurchase.manager.finishTransaction(t.transactionIdentifier); 
+						});
+						
+						trace("Called Finish on " + t.transactionIdentifier); 
+					}else if(t.state == Transaction.TRANSACTION_STATE_RESTORED){
+						if(t.originalTransaction.state == Transaction.TRANSACTION_STATE_FAILED || t.originalTransaction.state == Transaction.TRANSACTION_STATE_PUCHASED){
+							AppPurchase.manager.finishTransaction(t.originalTransaction.transactionIdentifier);
+							trace("Restored Transaction Finish on " + t.transactionIdentifier); 
+						}	
+					}else{
+						trace("Finish Not Called"); 
+					}
+				}
+			}
+			
+			protected function list1_changeHandler(event:IndexChangeEvent):void
+			{
+				var p:Product = arrC[event.newIndex] as Product;
+				AppPurchase.manager.startPayment(p.identifier,1); 
+			}
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:Button label="getProducts" click="button1_clickHandler(event)" />
+	<s:List dataProvider="{arrC}" labelField="title" change="list1_changeHandler(event)" />
+</s:Application>

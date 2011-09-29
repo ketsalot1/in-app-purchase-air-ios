@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="com.adobe.nativeExtensions.AppPurchase"/>
+    <classEntry path="com.adobe.nativeExtensions.Product"/>
+    <classEntry path="com.adobe.nativeExtensions.AppPurchaseEvent"/>
+    <classEntry path="com.adobe.nativeExtensions.Transaction"/>
+    <classEntry path="com.adobe.nativeExtensions.Base64"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>
