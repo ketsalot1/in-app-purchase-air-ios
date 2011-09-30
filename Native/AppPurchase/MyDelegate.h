@@ -2,8 +2,7 @@
 //  MyDelegate.h
 //  AppPurchase
 //
-//  Created by Saumitra Bhave on 28/06/2011.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Saumitra R. Bhave on 30 Sep 2011.
 //
 
 #import <Foundation/Foundation.h>

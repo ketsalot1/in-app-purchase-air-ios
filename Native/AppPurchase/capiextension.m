@@ -2,9 +2,7 @@
  *  capiextension.c
  *  iosextension
  *
- *  Created by Saumitra R. Bhave(sbhave@adobe.com) on 06/02/11.
- *  Copyright 2011 Adobe Systems. All rights reserved.
- *
+ *  Created by Saumitra R. Bhave on 30 Sep 2011.
  */
 #import "FlashRuntimeExtensions.h"
 #import "MyDelegate.h"
@@ -14,7 +12,7 @@ MyDelegate *observer = nil;
 
 FREObject getProducts(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
 	NSLog(@"getProducts Called.."); 
-	NSMutableSet* pids = nil;//[[NSMutableSet alloc] initWithCapacity:32];
+	NSMutableSet* pids = nil;
 	
 	uint32_t len = 0;
 	const uint8_t* str = nil;
@@ -192,17 +190,11 @@ NSMutableString* generateXml(SKPaymentTransaction* t){
 	NSLog(@"In Loop");
 	NSMutableString* retXML = [[NSMutableString alloc] initWithCapacity:128];
 	[retXML appendFormat:@"<transaction>"];
-	//NSLog(@"1");
 	[retXML appendFormat:@"<error>%@</error>",(t.transactionState == SKPaymentTransactionStateFailed?[[t.error localizedDescription] stringByAppendingFormat:@":%d",[t.error code]]:@"")];
-	//NSLog(@"2");
 	[retXML appendFormat:@"<pid>%@</pid>",t.payment.productIdentifier];
-	//NSLog(@"3");
 	[retXML appendFormat:@"<q>%d</q>",t.payment.quantity];
-	//NSLog(@"4");
 	[retXML appendFormat:@"<date>%f</date>",[t.transactionDate timeIntervalSince1970]];
-	//NSLog(@"5");
 	[retXML appendFormat:@"<id>%@</id>",t.transactionIdentifier];
-	//NSLog(@"6");
 	if(t.transactionState == SKPaymentTransactionStatePurchased){
 		NSString* d = [[NSString alloc] initWithData:t.transactionReceipt encoding:NSASCIIStringEncoding];
 		[retXML appendFormat:@"<receipt>%@</receipt>",d];
@@ -210,21 +202,14 @@ NSMutableString* generateXml(SKPaymentTransaction* t){
 	}else {
 		[retXML appendFormat:@"<receipt> </receipt>"];
 	}
-	//NSLog(@"7");
 	[retXML appendFormat:@"<state>%d</state>",t.transactionState];
-	//NSLog(@"8");
 	if(t.transactionState == SKPaymentTransactionStateRestored){
 		[retXML appendFormat:@"<og>"];
 		[retXML appendFormat:@"<error>%@</error>",(t.originalTransaction.transactionState == SKPaymentTransactionStateFailed?[[t.originalTransaction.error localizedDescription] stringByAppendingFormat:@":%d",[t.error code]]:@"")];
-		//NSLog(@"22");
 		[retXML appendFormat:@"<pid>%@</pid>",t.originalTransaction.payment.productIdentifier];
-		//NSLog(@"23");
 		[retXML appendFormat:@"<q>%d</q>",t.originalTransaction.payment.quantity];
-		//NSLog(@"24");
 		[retXML appendFormat:@"<date>%f</date>",[t.originalTransaction.transactionDate timeIntervalSince1970]];
-		//NSLog(@"25");
 		[retXML appendFormat:@"<id>%@</id>",t.originalTransaction.transactionIdentifier];
-		//NSLog(@"26");
 		if(t.originalTransaction.transactionState == SKPaymentTransactionStatePurchased){
 			NSString* d = [[NSString alloc] initWithData:t.originalTransaction.transactionReceipt encoding:NSASCIIStringEncoding]; 
 			[retXML appendFormat:@"<receipt>%@</receipt>",d];
@@ -232,20 +217,11 @@ NSMutableString* generateXml(SKPaymentTransaction* t){
 		}else {
 			[retXML appendFormat:@"<receipt> </receipt>"];
 		}
-		//NSLog(@"27");
 		[retXML appendFormat:@"<state>%d</state>",t.originalTransaction.transactionState];
-		//NSLog(@"28");
 		[retXML appendFormat:@"</og>"];
 	}else {
 		[retXML appendFormat:@"<og> </og>"];
 	}
-	/*NSLog(@"11");
-	 NSData* archive = [NSKeyedArchiver archivedDataWithRootObject:t];
-	 NSLog(@"12");
-	 NSString* d = [[NSString alloc] initWithData:archive encoding:NSASCIIStringEncoding];
-	 NSLog(@"13");
-	 [retXML appendFormat:@"<native>%@</native>",d];
-	 [d release];*/
 	[retXML appendFormat:@"</transaction>"];
 	return retXML;
 }
