@@ -1,0 +1,197 @@
+// !$*UTF8*$!
+{
+	0867D690FE84028FC02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeTarget = D2AAC07D0554694100DB518D /* AppPurchase */;
+		addToTargets = (
+			D2AAC07D0554694100DB518D /* AppPurchase */,
+		);
+		codeSenseManager = 98514C8E13BA0B9700A3AD26 /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					1307,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 339056945;
+			PBXWorkspaceStateSaveDate = 339056945;
+		};
+		perUserProjectItems = {
+			98514CFB13BA4E2800A3AD26 /* PBXTextBookmark */ = 98514CFB13BA4E2800A3AD26 /* PBXTextBookmark */;
+			98642F5613BC543000EFD176 /* PBXTextBookmark */ = 98642F5613BC543000EFD176 /* PBXTextBookmark */;
+			98642F5813BC543000EFD176 /* PBXTextBookmark */ = 98642F5813BC543000EFD176 /* PBXTextBookmark */;
+			98A2D730143599FD007DDD92 /* PBXTextBookmark */ = 98A2D730143599FD007DDD92 /* PBXTextBookmark */;
+			98A2D731143599FD007DDD92 /* PBXTextBookmark */ = 98A2D731143599FD007DDD92 /* PBXTextBookmark */;
+			98A2D732143599FD007DDD92 /* PBXTextBookmark */ = 98A2D732143599FD007DDD92 /* PBXTextBookmark */;
+			98A2D733143599FD007DDD92 /* PBXTextBookmark */ = 98A2D733143599FD007DDD92 /* PBXTextBookmark */;
+			98A2D734143599FD007DDD92 /* PBXTextBookmark */ = 98A2D734143599FD007DDD92 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 98514C8D13BA0B9700A3AD26 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	98514C8D13BA0B9700A3AD26 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	98514C8E13BA0B9700A3AD26 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	98514C8F13BA0BE000A3AD26 /* FlashRuntimeExtensions.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1485, 9664}}";
+			sepNavSelRange = "{5942, 0}";
+			sepNavVisRange = "{5512, 1393}";
+		};
+	};
+	98514C9013BA0BE000A3AD26 /* capiextension.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1485, 3712}}";
+			sepNavSelRange = "{51, 44}";
+			sepNavVisRange = "{0, 1033}";
+		};
+	};
+	98514C9613BA1A4A00A3AD26 /* MyDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1485, 608}}";
+			sepNavSelRange = "{87, 0}";
+			sepNavVisRange = "{0, 876}";
+		};
+	};
+	98514C9713BA1A4A00A3AD26 /* MyDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1485, 1328}}";
+			sepNavSelRange = "{90, 0}";
+			sepNavVisRange = "{0, 1203}";
+			sepNavWindowFrame = "{{15, 479}, {1770, 574}}";
+		};
+	};
+	98514CFB13BA4E2800A3AD26 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 98514CFC13BA4E2800A3AD26 /* stdint.h */;
+		name = "stdint.h: 50";
+		rLen = 39;
+		rLoc = 890;
+		rType = 0;
+		vrLen = 1200;
+		vrLoc = 447;
+	};
+	98514CFC13BA4E2800A3AD26 /* stdint.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = stdint.h;
+		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/usr/include/gcc/darwin/4.2/stdint.h;
+		sourceTree = "<absolute>";
+	};
+	98642F5613BC543000EFD176 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 98642F5713BC543000EFD176 /* SKPaymentTransaction.h */;
+		name = "SKPaymentTransaction.h: 37";
+		rLen = 0;
+		rLoc = 1597;
+		rType = 0;
+		vrLen = 2100;
+		vrLoc = 0;
+	};
+	98642F5713BC543000EFD176 /* SKPaymentTransaction.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = SKPaymentTransaction.h;
+		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/StoreKit.framework/Headers/SKPaymentTransaction.h;
+		sourceTree = "<absolute>";
+	};
+	98642F5813BC543000EFD176 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 98642F5913BC543000EFD176 /* NSDate.h */;
+		name = "NSDate.h: 11";
+		rLen = 31;
+		rLoc = 221;
+		rType = 0;
+		vrLen = 1307;
+		vrLoc = 0;
+	};
+	98642F5913BC543000EFD176 /* NSDate.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = NSDate.h;
+		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDate.h;
+		sourceTree = "<absolute>";
+	};
+	98A2D730143599FD007DDD92 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 98514C9013BA0BE000A3AD26 /* capiextension.m */;
+		name = "capiextension.m: 5";
+		rLen = 44;
+		rLoc = 51;
+		rType = 0;
+		vrLen = 1033;
+		vrLoc = 0;
+	};
+	98A2D731143599FD007DDD92 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 98514C9613BA1A4A00A3AD26 /* MyDelegate.h */;
+		name = "MyDelegate.h: 5";
+		rLen = 0;
+		rLoc = 87;
+		rType = 0;
+		vrLen = 876;
+		vrLoc = 0;
+	};
+	98A2D732143599FD007DDD92 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 98514C8F13BA0BE000A3AD26 /* FlashRuntimeExtensions.h */;
+		name = "FlashRuntimeExtensions.h: 204";
+		rLen = 0;
+		rLoc = 5942;
+		rType = 0;
+		vrLen = 1393;
+		vrLoc = 5512;
+	};
+	98A2D733143599FD007DDD92 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 98514C9713BA1A4A00A3AD26 /* MyDelegate.m */;
+		name = "MyDelegate.m: 6";
+		rLen = 0;
+		rLoc = 90;
+		rType = 0;
+		vrLen = 1203;
+		vrLoc = 0;
+	};
+	98A2D734143599FD007DDD92 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 98514C9713BA1A4A00A3AD26 /* MyDelegate.m */;
+		name = "MyDelegate.m: 6";
+		rLen = 0;
+		rLoc = 90;
+		rType = 0;
+		vrLen = 1203;
+		vrLoc = 0;
+	};
+	D2AAC07D0554694100DB518D /* AppPurchase */ = {
+		activeExec = 0;
+	};
+}
