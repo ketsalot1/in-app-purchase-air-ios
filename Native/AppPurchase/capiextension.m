@@ -131,7 +131,7 @@ FREObject getTrans(FREContext ctx, void* funcData, uint32_t argc, FREObject argv
 	}
 }
 
-void ContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, 
+void SBHINAPPContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, 
 						   uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet) {
 	NSLog(@"Context Created");
 	*numFunctionsToTest = 6;
@@ -170,19 +170,19 @@ void ContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx,
 	//// Set the globals.
 }
 
-void ContextFinalizer(FREContext ctx) { 
+void SBHINAPPContextFinalizer(FREContext ctx) { 
 	NSLog(@"Context Distroyed");
 }
 
-void ExtInitializer(void** extDataToSet, FREContextInitializer* ctxInitializerToSet, 
+void SBHINAPPExtInitializer(void** extDataToSet, FREContextInitializer* ctxInitializerToSet, 
 					FREContextFinalizer* ctxFinalizerToSet) {
 	NSLog(@"Extension Initialized");
 	*extDataToSet = NULL;
-	*ctxInitializerToSet = &ContextInitializer;
-	*ctxFinalizerToSet = &ContextFinalizer;
+	*ctxInitializerToSet = &SBHINAPPContextInitializer;
+	*ctxFinalizerToSet = &SBHINAPPContextFinalizer;
 }
 
-void ExtFinalizer(void* extData) {
+void SBHINAPPExtFinalizer(void* extData) {
 	NSLog(@"Extension Destroyed");
 }
 
