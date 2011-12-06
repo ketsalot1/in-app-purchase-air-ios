@@ -3,6 +3,7 @@ package com.sbhave.appPurchase.glue.functions;
 import com.adobe.fre.FREContext;
 import com.adobe.fre.FREFunction;
 import com.adobe.fre.FREObject;
+import com.sbhave.appPurchase.BillingReceiver;
 import com.sbhave.appPurchase.BillingService;
 import com.sbhave.appPurchase.glue.AppPurchaseExtensionContext;
 
@@ -14,7 +15,7 @@ public class InitFunction implements FREFunction {
 		
 		BillingService billSvc = new BillingService(ctx.getActivity());
 		billSvc.setContext(appCtx.getActivity().getApplicationContext());
-		//BillingReceiver recvr = new BillingReceiver();
+		BillingReceiver recvr = new BillingReceiver();
 		
 		appCtx.setBillingService(billSvc);
 		

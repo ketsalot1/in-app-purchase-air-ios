@@ -12,7 +12,7 @@ public class MutedCall implements FREFunction {
 	public FREObject call(FREContext ctx, FREObject[] args) {
 		AppPurchaseExtensionContext appCtx = (AppPurchaseExtensionContext) ctx;
 		FREObject retVal = null;
-		boolean val = appCtx.getBillingService().checkBillingSupported();
+		boolean val = true;//appCtx.getBillingService().checkBillingSupported();
 		
 		try {
 			retVal = FREObject.newObject(val);

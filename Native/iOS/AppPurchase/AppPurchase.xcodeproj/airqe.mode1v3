@@ -325,12 +325,12 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0D9377B81465141D00D36126</string>
+										<string>0D32B05E148D2007002FCA1F</string>
 										<key>history</key>
 										<array>
 											<string>0D9377A81465105300D36126</string>
 											<string>0D9377A91465105300D36126</string>
-											<string>0D9377AA1465105300D36126</string>
+											<string>0D9377B81465141D00D36126</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -342,14 +342,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {976, 654}}</string>
+								<string>{{0, 0}, {976, 653}}</string>
 								<key>RubberWindowFrame</key>
 								<string>207 135 1184 743 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>654pt</string>
+							<string>653pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -362,14 +362,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 659}, {976, 43}}</string>
+								<string>{{0, 658}, {976, 44}}</string>
 								<key>RubberWindowFrame</key>
 								<string>207 135 1184 743 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>43pt</string>
+							<string>44pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -388,9 +388,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>0D9377B91465141D00D36126</string>
+				<string>0D32B05F148D2007002FCA1F</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>0D9377BA1465141D00D36126</string>
+				<string>0D32B060148D2007002FCA1F</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -529,7 +529,7 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>0D8C461A13BCD1E700673ED1</string>
-		<string>/Users/airqe/work/Repos/in-app-purchase-air-ios/branches/v1/Native/AppPurchase/AppPurchase.xcodeproj</string>
+		<string>/Users/airqe/work/Repos/iap/IAP/branches/v1/Native/iOS/AppPurchase/AppPurchase.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>207 135 1184 743 0 0 1440 878 </string>
@@ -609,7 +609,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>0D8C461A13BCD1E700673ED1</string>
-				<string>0D9377BB1465141D00D36126</string>
+				<string>0D32B061148D2007002FCA1F</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

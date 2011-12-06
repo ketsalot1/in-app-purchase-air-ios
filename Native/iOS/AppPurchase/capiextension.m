@@ -56,7 +56,7 @@ FREObject startAppPayment(FREContext ctx, void* funcData, uint32_t argc, FREObje
 	return nil;
 }
 
-FREObject finishTransaction1(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
+FREObject finishTransaction(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
 	NSLog(@"Finish Transaction Called");
 	BOOL matchFound = NO;
 	const uint8_t* str = nil;
@@ -146,7 +146,7 @@ void SBHINAPPContextInitializer(void* extData, const uint8_t* ctxType, FREContex
 
 	func[2].name = (const uint8_t*)"finish"; 
 	func[2].functionData = NULL;
-	func[2].function = &finishTransaction1;
+	func[2].function = &finishTransaction;
 	
 	func[3].name = (const uint8_t*)"muted"; 
 	func[3].functionData = NULL;
