@@ -8,6 +8,16 @@
                 <initializer>SBHINAPPExtInitializer</initializer>
                 <finalizer>SBHINAPPExtFinalizer</finalizer>
             </applicationDeployment>
-        </platform>
+    </platform>
+    <platform name="Android-ARM">
+            <applicationDeployment>
+                <nativeLibrary>IAPAndroid.jar</nativeLibrary>
+                <initializer>com.sbhave.appPurchase.glue.AppPurchaseExtension</initializer>
+                <finalizer>com.sbhave.appPurchase.glue.AppPurchaseExtension</finalizer>
+            </applicationDeployment>
+    </platform>
+    <platform name="default"> 
+            <applicationDeployment/> 
+    </platform> 
   </platforms>
 </extension>

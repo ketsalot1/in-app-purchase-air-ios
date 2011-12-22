@@ -13,7 +13,9 @@ package com.adobe.nativeExtensions
 		private static var m_Manager:AppPurchase = null; 
 		public function AppPurchase()
 		{
-			trace("AS - In Constructor"); 
+			CONFIG::Device
+			{
+			trace("AS - In Constructor");
 			super();
 			if(ext == null){
 				trace("AS - Creating Context");
@@ -23,9 +25,10 @@ package com.adobe.nativeExtensions
 			}else{
 				throw new Error("This is a singleton. Use instance property instead.",1000);
 			}
+			}
 		}
 		
-		public static function get manager():AppPurchase{
+		public static function get manager():AppPurchase{ 
 			if(m_Manager == null){
 				m_Manager = new AppPurchase(); 
 			} 
@@ -33,36 +36,57 @@ package com.adobe.nativeExtensions
 		}
 		
 		public function getProducts(ids:Array):void{
+			CONFIG::Device
+			{
 			ext.call("getProducts",ids.join(","));
+			}
 		}
 		
 		public function startPayment(pid:String,quantity:int = 1):void{
+			CONFIG::Device
+			{
 			ext.call("startPayment",pid,quantity);
+			}
 		} 
 		
 		public function finishTransaction(tid:String):Boolean{
-			var ret:Object = ext.call("finish",tid);
-			if(ret == null) return false else return ret; 
+			var ret:Object = null;
+			CONFIG::Device
+			{
+				ret= ext.call("finish",tid);
+			}
+			if(ret == null) return false else return ret;
 		}
 		
 		public function restoreTransactions():void{
-			ext.call("restore");
+			CONFIG::Device
+			{
+				ext.call("restore");
+			}
 		}
 		
 		public function get muted():Boolean{
-			var ret:Object = ext.call("muted");
+			var ret:Object = null;
+			CONFIG::Device
+			{
+				ret = ext.call("muted");
+			}
 			if(ret == null) return true else return ret;
 		}
 		
 		public function get transactions():Array{
-			var o:Object = ext.call("trans");
-			var xmlStr:String = o as String;
-			var arr:Array = new Array();
-			var txml:XML = new XML(xmlStr);
-			trace("APP - In Transactions Prop...");
-			trace(txml);
-			for each(var t:* in txml.transaction){
-				arr.push(getTransaction(t)); 
+			var arr:Array = null;
+			CONFIG::Device
+			{
+				var o:Object = ext.call("trans");
+				var xmlStr:String = o as String;
+				arr = new Array();
+				var txml:XML = new XML(xmlStr);
+				trace("APP - In Transactions Prop...");
+				trace(txml);
+				for each(var t:* in txml.transaction){
+					arr.push(getTransaction(t)); 
+				}
 			}
 			
 			return arr;

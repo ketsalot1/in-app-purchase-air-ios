@@ -28,18 +28,28 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 342168513;
-			PBXWorkspaceStateSaveDate = 342168513;
+			PBXPerProjectTemplateStateSaveDate = 344793058;
+			PBXWorkspaceStateSaveDate = 344793058;
 		};
 		perUserProjectItems = {
+			0D32B05E148D2007002FCA1F /* PBXTextBookmark */ = 0D32B05E148D2007002FCA1F /* PBXTextBookmark */;
 			0D9377A81465105300D36126 /* PBXTextBookmark */ = 0D9377A81465105300D36126 /* PBXTextBookmark */;
 			0D9377A91465105300D36126 /* PBXTextBookmark */ = 0D9377A91465105300D36126 /* PBXTextBookmark */;
-			0D9377AA1465105300D36126 /* PBXTextBookmark */ = 0D9377AA1465105300D36126 /* PBXTextBookmark */;
 			0D9377B81465141D00D36126 /* PBXTextBookmark */ = 0D9377B81465141D00D36126 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 0D8C461C13BCD1E700673ED1 /* Source Control */;
 		userBuildSettings = {
 		};
+	};
+	0D32B05E148D2007002FCA1F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 98514C9013BA0BE000A3AD26 /* capiextension.m */;
+		name = "capiextension.m: 59";
+		rLen = 0;
+		rLoc = 1748;
+		rType = 0;
+		vrLen = 1568;
+		vrLoc = 1284;
 	};
 	0D8C461C13BCD1E700673ED1 /* Source Control */ = {
 		isa = PBXSourceControlManager;
@@ -75,31 +85,21 @@
 		vrLen = 876;
 		vrLoc = 0;
 	};
-	0D9377AA1465105300D36126 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 98514C9013BA0BE000A3AD26 /* capiextension.m */;
-		name = "capiextension.m: 185";
-		rLen = 0;
-		rLoc = 5614;
-		rType = 0;
-		vrLen = 1776;
-		vrLoc = 4831;
-	};
 	0D9377B81465141D00D36126 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 98514C9013BA0BE000A3AD26 /* capiextension.m */;
 		name = "capiextension.m: 189";
 		rLen = 0;
-		rLoc = 5737;
+		rLoc = 5735;
 		rType = 0;
 		vrLen = 2178;
 		vrLoc = 5018;
 	};
 	98514C9013BA0BE000A3AD26 /* capiextension.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1622, 2912}}";
-			sepNavSelRange = "{5737, 0}";
-			sepNavVisRange = "{5018, 2178}";
+			sepNavIntBoundsRect = "{{0, 0}, {957, 3107}}";
+			sepNavSelRange = "{1748, 0}";
+			sepNavVisRange = "{1284, 1568}";
 		};
 	};
 	98514C9613BA1A4A00A3AD26 /* MyDelegate.h */ = {
