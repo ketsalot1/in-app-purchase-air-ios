@@ -27,7 +27,7 @@
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation_agent.swc" useDefaultLinkType="false"/>
         </excludedEntries>
       </libraryPathEntry>
-      <libraryPathEntry kind="5" linkType="2" path="/Users/airqe/work/Repos/iap/IAP/branches/v1/inAppMain.ane"/>
+      <libraryPathEntry kind="5" linkType="2" path="../../AS/bin/inAppMain.ane"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>
@@ -40,13 +40,11 @@
   <buildCSSFiles/>
   <flashCatalyst validateFlashCatalystCompatibility="false"/>
   <buildTargets>
-    <buildTarget buildTargetName="com.adobe.flexide.multiplatform.ios.platform" iosSettingsVersion="1" provisioningFile="/Users/airqe/AIR_iOS_Noida_Profile/AIR_iOS_Noida_Profile.mobileprovision" releasePackageType="">
+    <buildTarget buildTargetName="com.adobe.flexide.multiplatform.ios.platform" iosSettingsVersion="1" provisioningFile="" releasePackageType="">
       <multiPlatformSettings enabled="true" includePlatformLibs="false" platformID="com.adobe.flexide.multiplatform.ios.platform" version="2"/>
-      <airSettings airCertificatePath="/Users/airqe/AIR_iOS_Noida_Profile/Certificates.p12" airTimestamp="true" anePathSet="true" version="1">
+      <airSettings airCertificatePath="" airTimestamp="true" anePathSet="true" version="1">
         <airExcludes/>
-        <anePaths>
-          <anePathEntry path="/Users/airqe/work/Repos/iap/IAP/branches/v1/inAppMain.ane"/>
-        </anePaths>
+        <anePaths/>
       </airSettings>
       <actionScriptSettings version="1"/>
     </buildTarget>
@@ -60,11 +58,9 @@
     </buildTarget>
     <buildTarget airDownloadURL="" androidSettingsVersion="1" buildTargetName="com.adobe.flexide.multiplatform.android.platform">
       <multiPlatformSettings enabled="true" includePlatformLibs="false" platformID="com.adobe.flexide.multiplatform.android.platform" version="2"/>
-      <airSettings airCertificatePath="/Users/airqe/abc123new.p12" airTimestamp="true" anePathSet="true" version="1">
+      <airSettings airCertificatePath="" airTimestamp="true" anePathSet="true" version="1">
         <airExcludes/>
-        <anePaths>
-          <anePathEntry path="/Users/airqe/work/Repos/iap/IAP/branches/v1/inAppMain.ane"/>
-        </anePaths>
+        <anePaths/>
       </airSettings>
       <actionScriptSettings version="1"/>
     </buildTarget>
